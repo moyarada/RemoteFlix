@@ -1,0 +1,21 @@
+# config/mongodb.yml
+base: &base
+  adapter: mongodb
+  database: RemoteFlix_development
+#These are needed to authenticate with your db
+#should it run on another server
+  host: localhost
+  username: remoteflix
+  password: somepass
+
+development:
+  <<: *base
+
+test:
+  <<: *base
+  database: RemoteFlix_test
+
+
+production:
+  <<: *base
+  database: RemoteFlix_production

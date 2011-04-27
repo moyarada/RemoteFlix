@@ -1,0 +1,49 @@
+<script type="text/javascript">
+var vids = [
+<% @videos.each do |video| %>
+    ['<%= video['EmbedUrl']%>'],
+<% end %>
+];
+
+var v_width = 1200;
+var v_height = 600;
+var flashvars = {
+    skin: 'Snel',
+    width: v_width,
+    height: v_height,
+    controlbar: 'bottom',
+    autostart: true,
+    //repeat: list,
+    backcolor: "0x000000",
+    frontcolor: "0xFFFFFF",
+    volume: 70,
+    playlist: 'none',
+    playlistsize: 200,
+    //publishedid:<% @videos.each do |video| %><%= video['PublishedId']%><% if (video['PublishedId'] != @videos.last['PublishedId']) %>,<% end%><% end %>
+    //playlistid: 
+};
+var params = {
+    allowfullscreen: true,
+    allownetworking: true,
+    seamlesstabbing: true,
+    allowscriptaccess: "always",
+    bgcolor: "#000000",
+    menu: false
+};
+var attributes = {};
+var callbackFn = function(e) {
+    console.log(e);
+};
+
+swfobject.embedSWF(vids[1], "rfPlayer", v_width, v_height, "10", "/javascript/expressInstall.swf", flashvars, params, attributes, callbackFn);
+
+</script
+
+<div class="ui-layout-north">RemoteFlix</div>
+<div class="ui-layout-center">
+
+<div id="rfPlayer">
+</div>
+
+</div>
+<div class="ui-layout-west">West</div>
