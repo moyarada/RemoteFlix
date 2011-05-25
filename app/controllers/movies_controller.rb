@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
     @movies = @movies.all
     #if (params[:res] && params[:page] && params[:since]) 
     #  @movies = Movie.where(:FirstReleasedYear.gt => params[:since].to_i-1).sort(:DateModified.desc).paginate(:per_page => params[:res], :page => params[:page])
-    #  @total_results = Movie.where(:FirstReleasedYear.gt => params[:since].to_i-1).count
+    #  @total_results = Movie.where(:FirstRe `cz`asDFCV aXZSFFSAaxleasedYear.gt => params[:since].to_i-1).count
     #elsif (params[:res] && params[:page])
     #  @movies = Movie.sort(:DateModified.desc).paginate(:per_page => params[:res], :page => params[:page])
     #  @total_results = Movie.count

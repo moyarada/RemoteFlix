@@ -16,6 +16,11 @@ if db_config[Rails.env] && db_config[Rails.env]['adapter'] == 'mongodb'
   end
 end
 
+Movie.ensure_index :PublishedId, :unique => true
+Movie.ensure_index :FirstReleasedYear
+Movie.ensure_index :DateModified
+Movie.ensure_index :GenreID
+
 # ActionController::Base.rescue_responses['MongoMapper::DocumentNotFound'] = :not_found
 
 # Used for image uploads

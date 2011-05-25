@@ -34,7 +34,3 @@ class Movie
   many :videos
 end  
 
-Movie.ensure_index :PublishedId, :unique => true
-Movie.ensure_index :FirstReleasedYear
-Movie.ensure_index :DateModified
-Movie.ensure_index :GenreID

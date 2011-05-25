@@ -8,6 +8,8 @@ RemoteFlix::Application.routes.draw do
   
   resources :videos
   
+  root :to => "front_pages#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
